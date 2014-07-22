@@ -44,9 +44,16 @@ puri.p - initalizes the PRU uart, reads data until nl, on receipt of nl, writes 
              The Interrupt system of the PRU takes 64 System Event and maps these events (SysEvts) to 9 channels.  The 9 channels are then mapped to 9 Host interrupts. A host is the PRU or Linux running on the main processor.  Refer to page 153 of the AM335x PRU-ICSS Reference Guide.  In section 7 there is a list of the System Events.  Note that by default the PRU enables the MII-RT set.  You must set the MII_RT register, see section 10.  Host Interrupts 0 & 1 are reserved for
 the PRU and appear on r31.t30 & r31.t30.  The other 7 Host Interrupts are sent to Linux.
 
-             I could only receive SysEvt from the Uart interrupt. Note that according to section 8.2.8.1 all Uart interrupts are multiplexed and sent as one signal.  This may be why 4, didn't work for me.
+             I could only receive SysEvt #6 from the Uart interrupt. Note that according to section 8.2.8.1 all Uart interrupts are multiplexed and sent as one signal.  This may be why #4 Uart Rx, didn't work for me.
 
              The C program puri.c uses the prussdrv library to initalize the PRU interrupt system and map a System Event from
 the PRU to Linux.  So in this example, puri.p doesn't have to do the full initalization.
 
 
+
+
+              Ref:
+              AM335x_PRU-ICSS Reference Guide vesrion A.
+              https://github.com/beagleboard/am335x_pru_package  (Note, Changes were committed around 7-10-2014)
+              http://elinux.org/Ti_AM33XX_PRUSSv2
+              http://e2e.ti.com/support/arm/sitara_arm/f/791/t/239121.aspx
