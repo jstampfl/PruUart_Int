@@ -7,7 +7,7 @@ ADAFRUIT Ultimate GPS
 
 Software:
 
-Debian version of Linux .
+Debian version 2014-07-16 3.8.13-bone60
 gcc
 
 Texas Instruments "am335x_pru_package-master"
